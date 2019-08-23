@@ -6,6 +6,12 @@ jQuery(document).ready(function($) {
         $('html,body').animate({scrollTop: 0}, 700);
     });
 
+    if ($(window.location.hash).length) {
+        $('html, body').animate({
+            scrollTop: $('#about-us').offset().top-250
+        }, 700);
+    }
+
     $(window).scroll(function(){
 		var scroll = $(window).scrollTop();
 		if (scroll > 80) {          
@@ -28,6 +34,12 @@ jQuery(document).ready(function($) {
     
 
     $('a[href= "#about-us"]').addClass('smooth');
+    $('a[href="http://localhost/wordpress/#about-us"]').click(function(event){
+        event.preventDefault();
+        url = "http://localhost/wordpress/#about-us";
+        window.location = url; 
+    });
+    
     
     $('.smooth').click(function(e){
         e.preventDefault();
